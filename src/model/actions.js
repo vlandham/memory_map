@@ -15,9 +15,17 @@ export const CREATE_TOKENS = 'CREATE_TOKENS';
 export const UPDATE_TOKEN_OPTIONS = 'UPDATE_TOKEN_OPTIONS';
 export const UPDATE_VIS_OPTIONS = 'UPDATE_VIS_OPTIONS';
 
+export const ADD_LOCATION = 'ADD_LOCATION';
+
+
 /*
  * action creators
  */
+
+export function addLocation(locationId, location) {
+  return { type: ADD_LOCATION, locationId, location };
+}
+
 export function addText(textId, text) {
   return { type: ADD_TEXT, textId, text };
 }

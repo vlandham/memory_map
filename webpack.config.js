@@ -59,12 +59,23 @@ module.exports = {
         include: /src/,
         loaders: ['babel?presets[]=react,presets[]=es2015&plugins[]=transform-runtime']
       },
+      {
+        test: /\.yaml/,
+        include: /assets/,
+        loader: "file?name=[name].[ext]"
+      },
+      {
+        test: /\.csv/,
+        include: /assets/,
+        loader: "file?name=[name].[ext]"
+      },
       // the url-loader uses DataUrls.
       // the file-loader emits files.
       {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff&name=assets/[name].[ext]'},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream&name=assets/[name].[ext]'},
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=assets/[name].[ext]'},
-      {test: /\.png(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000'},
+      // {test: /\.png(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000'},
+      {test: /\.png(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=images/[name].[ext]'},
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml&name=assets/[name].[ext]'},
       {
         test: /\.html$/,

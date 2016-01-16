@@ -1,14 +1,22 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 #main {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.location {
-  width: 400px;
-  height: 400px;
+.title {
+  margin-bottom: 2.4em;
+  text-align: center;
+  p {
+    color: #999;
+  }
 }
 
-.leaflet-container {
-  height: 100%;
+h1 {
+  text-align: center;
+  // text-transform: uppercase;
+  color: #777;
 }

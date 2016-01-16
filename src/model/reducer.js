@@ -1,7 +1,8 @@
 
 import Immutable from 'immutable';
 
-import { ADD_TEXT,
+import { ADD_LOCATION,
+         ADD_TEXT,
          REMOVE_TEXT,
          CREATE_TOKENS,
          UPDATE_TOKEN_OPTIONS,
@@ -25,11 +26,14 @@ export var INITIAL_STATE = Immutable.fromJS({
     "displayVis": "",
     "allVis": ["concordance", "wordcloud"],
     "searchToken": "lost",
-  }
+  },
+  locations: {}
 });
 
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case ADD_LOCATION:
+      return state.updateIn(['locations', action.locationId], () => action.location);
     case ADD_TEXT:
       return state.updateIn(['rawTexts', action.textId], () => action.text);
     case REMOVE_TEXT:

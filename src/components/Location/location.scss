@@ -1,0 +1,42 @@
+.leaflet-container {
+  height: 100%;
+}
+
+.location {
+  width: 400px;
+  height: 400px;
+
+  float: left;
+  padding-right: 10px;
+  .leaflet-control-attribution {
+    display: none;
+  }
+
+  .leaflet-control-zoom {
+    display: none;
+  }
+  .map {
+    border-radius: 50%;
+    border: 1px solid #666;
+    overflow:hidden;
+  }
+  .leaflet-layer {
+    canvas {
+      display:block;
+      border-radius: 50%;
+      overflow:hidden;
+    }
+  }
+
+  .name {
+    text-align: center;
+    text-transform: uppercase;
+    color: #777;
+  }
+}
+
+.clip-circle {
+  clip-path: circle(60px at center);
+  /* OLD VALUE example: circle(245px, 140px, 50px); */
+  /* Yep, even the new clip-path has deprecated stuff. */
+}
